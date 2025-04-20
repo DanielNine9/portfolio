@@ -135,7 +135,7 @@ function App() {
                 )}
               </button>
               <a
-                href="https://leetcode.com/u/Euc5Y9c3U0/"
+                href="https://leetcode.com/u/dqhuyy/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`${
@@ -260,7 +260,7 @@ function App() {
               </div> */}
               <div className="flex items-center space-x-6">
                 {/* <a 
-                  href="https://leetcode.com/u/Euc5Y9c3U0/" 
+                  href="https://leetcode.com/u/dqhuyy/" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className={`${darkMode ? 'text-amber-400 hover:text-amber-300' : 'text-amber-600 hover:text-amber-700'} transition-colors duration-300 flex items-center`}
