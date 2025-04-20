@@ -89,13 +89,13 @@ const Contact = ({ darkMode }: ContactProps) => {
                                 <ContactInfo
                                     Icon={Mail}
                                     title="Email"
-                                    content="tientc203@gmail.com"
+                                    content="dinhhuy1925@gmail.com"
                                     darkMode={darkMode}
                                 />
                                 <ContactInfo
                                     Icon={Phone}
                                     title="Phone"
-                                    content="0833233306"
+                                    content="0944242140"
                                     darkMode={darkMode}
                                 />
                                 <ContactInfo
@@ -112,7 +112,7 @@ const Contact = ({ darkMode }: ContactProps) => {
                                 <div className="flex flex-wrap gap-4 justify-center">
                                     {/* GitHub */}
                                     <motion.a
-                                        href="https://github.com/Tien171-git"
+                                        href="https://github.com/DanielNine9"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         whileHover={{ y: -5 }}
@@ -130,7 +130,7 @@ const Contact = ({ darkMode }: ContactProps) => {
 
                                     {/* Facebook */}
                                     <motion.a
-                                        href="https://www.facebook.com/profile.php?id=100016240685122"
+                                        href="https://www.facebook.com/dihhyun"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         whileHover={{ y: -5 }}
@@ -148,7 +148,7 @@ const Contact = ({ darkMode }: ContactProps) => {
 
                                     {/* LinkedIn */}
                                     <motion.a
-                                        href="https://www.linkedin.com/in/tien-dinh-21a4222b5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                        href="https://www.linkedin.com/in/dinh-huy-80514b2b5/"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         whileHover={{ y: -5 }}

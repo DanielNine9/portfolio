@@ -147,7 +147,7 @@ function App() {
                 <Code2 className="h-5 w-5" />
               </a>
               <a
-                href="https://github.com/Tien171-git"
+                href="https://github.com/DanielNine9"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`${
@@ -159,7 +159,7 @@ function App() {
                 <Github className="h-5 w-5" />
               </a>
               <a
-                href="mailto:tientc203@gmail.com"
+                href="mailto:dinhhuy1925@gmail.com"
                 className={`${
                   darkMode
                     ? "text-blue-400 hover:text-blue-300"
@@ -269,7 +269,7 @@ function App() {
                   <span>LeetCode</span>
                 </a> */}
                 <a
-                  href="https://github.com/Tien171-git"
+                  href="https://github.com/DanielNine9"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`${
@@ -282,7 +282,7 @@ function App() {
                   <span>GitHub</span>
                 </a>
                 <a
-                  href="mailto:tientc203@gmail.com"
+                  href="mailto:dinhhuy1925@gmail.com"
                   className={`${
                     darkMode
                       ? "text-blue-400 hover:text-blue-300"
