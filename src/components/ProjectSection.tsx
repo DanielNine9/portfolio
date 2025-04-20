@@ -10,7 +10,7 @@ interface ProjectsSectionProps {
 
 const ProjectsSection: React.FC<ProjectsSectionProps> = ({ darkMode }) => {
   return (
-    <section id="projects" className={`py-20 ${darkMode ? 'bg-slate-900' : 'bg-gray-50'} transition-colors duration-300`}>
+    <section id="projects" className={`pt-10 ${darkMode ? 'bg-slate-900' : 'bg-gray-50'} transition-colors duration-300`}>
       <div className="container ">
         <div className="space-y-16">
           {projects.map((project, index) => (

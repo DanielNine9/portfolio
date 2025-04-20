@@ -83,7 +83,7 @@ export const Skills: React.FC<SkillsProps> = ({ darkMode }) => {
           darkMode ? 'text-blue-300' : 'text-blue-700'
         }`}
       >
-        Technical Skills
+        Technical Skills & Noteworthy Projects
       </motion.h2>
       <motion.div
         variants={container}
