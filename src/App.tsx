@@ -233,12 +233,12 @@ function App() {
                 <div className="mt-8">
                   <GitHubContributions darkMode={darkMode} />
                 </div>
-                <div className="mt-8">
+                {/* <div className="mt-8">
                   <PersonelProjects
                     repositories={repositories}
                     isLoading={isReposLoading}
                   />
-                </div>
+                </div> */}
               </section>
               <section id="contact">
                 <Contact darkMode={darkMode} />
