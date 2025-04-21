@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { BookOpen, Briefcase, Award, GraduationCap, Code2, Github, Contact } from 'lucide-react';
+import { BookOpen, Briefcase, GraduationCap, Code2, Github, Contact } from 'lucide-react';
 import { GiSkills } from 'react-icons/gi';
+
 interface SidebarProps {
   darkMode: boolean;
   activeSection: string;
@@ -11,9 +12,9 @@ interface SidebarProps {
 const navItems = [
   { id: 'about', label: 'About', icon: BookOpen },
   { id: 'experience', label: 'Experience', icon: Briefcase },
-  { id: 'projects', label: 'Projects', icon: Code2 },
+  { id: 'projects', label: 'Real Projects', icon: Code2 },
   { id: 'education', label: 'Education', icon: GraduationCap },
-  { id: 'skills', label: 'Skills', icon: GiSkills },
+  { id: 'skills', label: 'Skills & Projects', icon: GiSkills },
   { id: 'github', label: 'Github', icon: Github },
   { id: 'contact', label: 'Contact', icon: Contact },
 ];
@@ -29,35 +30,18 @@ export const Sidebar: React.FC<SidebarProps> = ({ darkMode, activeSection, onSec
         darkMode ? 'bg-slate-800 border-r border-slate-700' : 'bg-white border-r border-gray-200'
       } transition-colors duration-300 z-40 shadow-lg`}
     >
-      {/* <motion.button
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        onClick={() => setIsCollapsed(!isCollapsed)}
-        className={`absolute -right-3 top-6 p-1.5 rounded-full ${
-          darkMode ? 'bg-slate-700 text-slate-300' : 'bg-white text-gray-600'
-        } shadow-lg border ${darkMode ? 'border-slate-600' : 'border-gray-200'}`}
-      >
-        {isCollapsed ? (
-          <ChevronRight className="h-4 w-4" />
-        ) : (
-          <ChevronLeft className="h-4 w-4" />
-        )}
-      </motion.button> */}
-
-      <nav className="py-8 px-4 h-full overflow-y-auto">
+      <nav className="py-8 px-4 h-full">
         <ul className="space-y-2">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeSection === item.id;
-            console.log(activeSection)
-            console.log('item id' , item.id)
-            console.log('is active ',isActive)
-            
+
             return (
               <motion.li
                 key={item.id}
                 whileHover={{ x: 5 }}
                 whileTap={{ scale: 0.95 }}
+                className="relative group"
               >
                 <button
                   onClick={() => onSectionClick(item.id)}
@@ -87,12 +71,24 @@ export const Sidebar: React.FC<SidebarProps> = ({ darkMode, activeSection, onSec
                   {isActive && (
                     <motion.div
                       layoutId="activeSection"
-                      className={`absolute right-0 w-1 h-8 rounded-l-full ${
+className={`absolute right-0 w-1 h-8 rounded-l-full ${
                         darkMode ? 'bg-blue-400' : 'bg-blue-600'
                       }`}
                     />
                   )}
                 </button>
+                {/* Tooltip */}
+                {isCollapsed && (
+                  <span
+                    className={`absolute left-full ml-2 top-1/2 -translate-y-1/2 px-2 py-1 text-sm font-medium rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-50 ${
+                      darkMode
+                        ? 'bg-slate-700 text-gray-200 border border-slate-600'
+                        : 'bg-gray-100 text-gray-900 border border-gray-200'
+                    }`}
+                  >
+                    {item.label}
+                  </span>
+                )}
               </motion.li>
             );
           })}
