@@ -99,7 +99,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, darkMode }) =
               {project.title}
             </h3>
             <span className={`text-sm ml-4 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-              {project.startTime}
+              {project.startTime} - {project.endTime ? project.endTime : "Present"}
             </span>
           </div>
           
