@@ -37,7 +37,7 @@ export interface Project {
         frontend: ["ReactJS", "HTML", "CSS", "JavaScript"],
         backend: ["Java", "Spring Boot"],
       },
-      techStack: ["ReactJS", "Docker", "Spring Boot", "Redis", "Microservices", "Spring Cloud", "Keycloak", "Kafka", "Multi Module", "Spring Security"],
+      techStack: ["ReactJS", "Docker", "Spring Boot", "Redis", "PostgresQL", "MySQL", "Microservices", "Spring Cloud", "Keycloak", "Kafka", "Multi Module", "Spring Security"],
       deployment: {
         frontend: "Vercel",
         backend: "Cloudflare Tunnel",
