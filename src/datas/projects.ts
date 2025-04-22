@@ -25,6 +25,30 @@ export interface Project {
   
   export const projects: Project[] = [
     {
+      images: ["/img/crown_1.png", "/img/crown_2.png"],
+      title: "Crown",
+      team_size: 1,
+      description: "A perfume e-commerce platform designed for a friend, focusing on elegant UI and seamless user experience.",
+      repositories: {
+        frontend: "https://github.com/danielNine9/perfumeShopUI",
+        backend: "https://github.com/DanielNine9/ecommerce_microservices",
+      },
+      skills: {
+        frontend: ["ReactJS", "HTML", "CSS", "JavaScript"],
+        backend: ["Java", "Spring Boot"],
+      },
+      techStack: ["ReactJS", "Docker", "Spring Boot", "Redis", "Microservices", "Spring Cloud", "Keycloak", "Kafka", "Multi Module", "Spring Security"],
+      deployment: {
+        frontend: "Vercel",
+        backend: "Cloudflare Tunnel",
+        database: "Docker compose (MySQL, PostgresQL, Redis)",
+      },
+      demoLink: "https://perfume-shop-ui.vercel.app/",
+      note: "This project is still in development and was designed for a friend.",
+      startTime: "March 2025",
+      status: "In Progress",
+    },
+    {
       images: ["/img/book_heaven_1.png", "/img/book_heaven_2.png"],
       title: "Book Heaven",
       team_size: 1,
@@ -48,30 +72,7 @@ export interface Project {
       startTime: "January 2025",
       status: "Completed",
     },
-    {
-      images: ["/img/crown_1.png", "/img/crown_2.png"],
-      title: "Crown",
-      team_size: 1,
-      description: "A perfume e-commerce platform designed for a friend, focusing on elegant UI and seamless user experience.",
-      repositories: {
-        frontend: "https://github.com/danielNine9/perfumeShopUI",
-        backend: null,
-      },
-      skills: {
-        frontend: ["ReactJS", "HTML", "CSS", "JavaScript"],
-        backend: [],
-      },
-      techStack: ["ReactJS"],
-      deployment: {
-        frontend: "Vercel",
-        backend: null,
-        database: null,
-      },
-      demoLink: "https://perfume-shop-ui.vercel.app/",
-      note: "This project is still in development and was designed for a friend.",
-      startTime: "March 2025",
-      status: "In Progress",
-    },
+   
     {
       images: ["/img/cars_1.png"],
       title: "Car Manager",
