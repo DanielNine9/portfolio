@@ -1,4 +1,5 @@
 export interface Project {
+  id: string;
   images: string[];
   title: string;
   team_size: number;
@@ -26,6 +27,7 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "crown",
     images: ["/img/crown_1.png", "/img/crown_2.png"],
     title: "Crown",
     team_size: 1,
@@ -47,10 +49,11 @@ export const projects: Project[] = [
     demoLink: "https://perfume-shop-ui.vercel.app/",
     note: "This project is still in development and was designed for a friend.",
     startTime: "March 2025",
-    endTime: null, // In Progress, so no endTime
+    endTime: null,
     status: "In Progress",
   },
   {
+    id: "book-heaven",
     images: ["/img/book_heaven_1.png", "/img/book_heaven_2.png"],
     title: "Book Heaven",
     team_size: 1,
@@ -72,10 +75,11 @@ export const projects: Project[] = [
     demoLink: "https://book-store-ui-mauve.vercel.app/",
     note: "This is my first project using the Gin framework for backend development.",
     startTime: "January 2025",
-    endTime: "March 2025", // Completed, assuming finished in March 2025
+    endTime: "March 2025",
     status: "Completed",
   },
   {
+    id: "car-manager",
     images: ["/img/cars_1.png"],
     title: "Car Manager",
     team_size: 1,
@@ -97,10 +101,11 @@ export const projects: Project[] = [
     demoLink: "https://car-manager-fm5o.vercel.app/",
     note: "My first full-stack project, built in 2023, with some known issues due to limited experience at the time.",
     startTime: "June 2023",
-    endTime: "December 2023", // Completed, assuming finished in December 2023
+    endTime: "December 2023",
     status: "Completed",
   },
   {
+    id: "talent-hub",
     images: ["/img/talent_hub_1.png"],
     title: "Talent Hub",
     team_size: 5,
@@ -110,22 +115,23 @@ export const projects: Project[] = [
       backend: "https://github.com/DanielNine9/talenthub_be",
     },
     skills: {
-      frontend: ["ReactJS", "HTML", "CSS", "JavaScript"],
+      frontend: ["ReactJS", "HTML", "CSS", "JavaScript", "TypeScript"],
       backend: ["Spring Boot", "Java"],
     },
-    techStack: ["ReactJS", "Spring Boot", "PostgreSQL"],
+    techStack: ["ReactJS", "TypeScript", "Spring Boot", "MySQL", "WebSocket", "Redis", "OAuth 2.0"],
     deployment: {
       frontend: "Vercel",
       backend: "TryCloudflare",
-      database: "Localhost (PostgreSQL)",
+      database: "Localhost (MySQL)",
     },
     demoLink: "https://talenthub.io.vn/",
     note: "The backend is hosted on TryCloudflare, which may result in occasional availability issues due to its tunneling nature.",
     startTime: "December 2024",
-    endTime: null, // In Progress, so no endTime
+    endTime: null,
     status: "In Progress",
   },
   {
+    id: "helpdesk-ai",
     images: ["/img/helpdesk_1.png"],
     title: "Helpdesk AI",
     team_size: 5,
@@ -147,7 +153,7 @@ export const projects: Project[] = [
     demoLink: "https://helpdesk-chatbot-ten.vercel.app/",
     note: "The backend is hosted via Cloudflare Tunnel, which may cause occasional availability issues due to its tunneling mechanism.",
     startTime: "January 2025",
-    endTime: "April 2025", 
+    endTime: "April 2025",
     status: "Completed",
   },
 ];

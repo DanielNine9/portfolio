@@ -26,6 +26,36 @@ function App() {
   const [isUserLoading, setIsUserLoading] = useState(true);
 
   useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+    const isPrj = searchParams.get("projects");
+    const projectId = searchParams.get("projectId");
+    if (projectId) {
+      setActiveSection("projects");
+      setTimeout(() => {
+        if (projectId) {
+          const element = document.getElementById(`project-card-${projectId}`);
+          if (element) {
+            const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({
+              top: elementPosition - 90, // Offset by 200px for the navbar
+              behavior: "smooth",
+            });
+          }
+        } else {
+          const element = document.getElementById("projects");
+          if (element) {
+            const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({
+              top: elementPosition - 200, // Offset by 200px for the navbar
+              behavior: "smooth",
+            });
+          }
+        }
+      }, 100);
+    }
+  }, []);
+
+  useEffect(() => {
     const loadData = async () => {
       try {
         // Fetch GitHub user data
