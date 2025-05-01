@@ -16,6 +16,7 @@ import PersonelProjects from "./components/PersonelProjects";
 import { GithubUser, Repository } from "./types";
 import { fetchGithubUser, fetchRepositories } from "./services/github";
 import ProjectsSection from "./components/ProjectSection";
+import emailjs from "@emailjs/browser";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -37,7 +38,7 @@ function App() {
           if (element) {
             const elementPosition = element.getBoundingClientRect().top + window.scrollY;
             window.scrollTo({
-              top: elementPosition - 90, // Offset by 200px for the navbar
+              top: elementPosition - 100, // Offset by 200px for the navbar
               behavior: "smooth",
             });
           }
@@ -54,6 +55,37 @@ function App() {
       }, 100);
     }
   }, []);
+
+  useEffect(() => {
+    const notifyVisit = async () => {
+      try {
+        const visitTime: string = new Date().toLocaleString();
+
+        // Prepare email content
+        const emailContent = {
+          to_email: "huydqpc07859@fpt.edu.vn",
+          subject: "New Visitor to Your Portfolio",
+          message: `Someone visited your portfolio at: ${visitTime}`,
+        };
+
+        // Send email using EmailJS
+        await emailjs.send(
+          "service_zdozy9m", // Replace with your EmailJS Service ID
+          "template_u7mkdhf", // Use EmailJS default template
+          emailContent,
+          "4BWiW0q4fFEr1ha7Z" // Replace with your EmailJS User ID
+        );
+        console.log("Notification email sent successfully");
+      } catch (error) {
+        console.error("Error sending notification email:", error);
+      }
+    };
+
+    // Initialize EmailJS
+    emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS User ID
+    notifyVisit();
+  }, []); // Runs once on page load
+
 
   useEffect(() => {
     const loadData = async () => {
