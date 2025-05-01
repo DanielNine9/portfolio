@@ -64,12 +64,26 @@ function App() {
 
       try {
         const visitTime: string = new Date().toLocaleString();
+        const searchParams = new URLSearchParams(window.location.search);
+        const projectId = searchParams.get("projectId");
+
+        // Fetch visitor's IP address
+        let ipAddress = "Unknown";
+        try {
+          const response = await fetch("https://api.ipify.org?format=json");
+          const data = await response.json();
+          ipAddress = data.ip || "Unknown";
+        } catch (error) {
+          console.error("Error fetching IP address:", error);
+        }
 
         // Prepare email content
         const emailContent = {
           to_email: "huydqpc07859@fpt.edu.vn",
           subject: "New Visitor to Your Portfolio",
-          message: `Someone visited your portfolio at: ${visitTime}`,
+          message: projectId
+            ? `Someone accessed your portfolio via CV by clicking on project ID ${projectId} at: ${visitTime}. Visitor IP: ${ipAddress}`
+            : `Someone visited your portfolio at: ${visitTime}. Visitor IP: ${ipAddress}`,
         };
 
         // Send email using EmailJS
@@ -237,8 +251,8 @@ function App() {
             </div>
           </div>
         </div>
+       {/* Sidebar */}
       </nav>
-
       <div className="transition-all duration-300 w-full">
         <main className="px-4 sm:px-6 lg:px-8 py-16 w-full d-flex">
           <Sidebar
@@ -246,7 +260,6 @@ function App() {
             activeSection={activeSection}
             onSectionClick={scrollToSection}
           />
-
           <AnimatePresence mode="wait">
             <motion.div
               key="content"
@@ -280,7 +293,6 @@ function App() {
                 <Skills darkMode={darkMode} />
               </section>
               <ProjectsSection darkMode={darkMode} />
-
               <section id="github" className="mt-8">
                 <motion.h2
                   initial={{ opacity: 0, x: -20 }}
@@ -303,7 +315,7 @@ function App() {
             </motion.div>
           </AnimatePresence>
         </main>
-
+        {/* Footer */}
         <footer
           className={`${
             darkMode ? "bg-slate-800" : "bg-white"
