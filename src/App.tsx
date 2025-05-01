@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Github, Mail, MapPin, Moon, Sun, Code2 } from "lucide-react";
 import { Hero } from "./components/Hero";
 import Experience from "./components/Experience";
@@ -25,6 +25,7 @@ function App() {
   const [isReposLoading, setIsReposLoading] = useState(true);
   const [user, setUser] = useState<GithubUser | null>(null);
   const [isUserLoading, setIsUserLoading] = useState(true);
+  const hasSentEmail = useRef(false); // Track if email has been sent
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
@@ -38,7 +39,7 @@ function App() {
           if (element) {
             const elementPosition = element.getBoundingClientRect().top + window.scrollY;
             window.scrollTo({
-              top: elementPosition - 100, // Offset by 200px for the navbar
+              top: elementPosition - 100, // Offset by 100px for the navbar
               behavior: "smooth",
             });
           }
@@ -58,6 +59,9 @@ function App() {
 
   useEffect(() => {
     const notifyVisit = async () => {
+      if (hasSentEmail.current) return; // Skip if email was already sent
+      hasSentEmail.current = true; // Mark email as sent
+
       try {
         const visitTime: string = new Date().toLocaleString();
 
@@ -82,10 +86,9 @@ function App() {
     };
 
     // Initialize EmailJS
-    emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS User ID
+    emailjs.init("4BWiW0q4fFEr1ha7Z"); // Replace with your EmailJS User ID
     notifyVisit();
   }, []); // Runs once on page load
-
 
   useEffect(() => {
     const loadData = async () => {
@@ -117,6 +120,7 @@ function App() {
       ? `${user.name} | Portfolio`
       : "Daniel Nine9 | Portfolio";
   }, [user]);
+
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
     document.documentElement.classList.toggle("dark");
@@ -255,9 +259,6 @@ function App() {
               <section id="about">
                 <Hero darkMode={darkMode} />
               </section>
-              {/* <section id="resume">
-                <Resume darkMode={darkMode} />
-              </section> */}
               <section id="experience">
                 <Experience darkMode={darkMode} />
               </section>
@@ -295,12 +296,6 @@ function App() {
                 <div className="mt-8">
                   <GitHubContributions darkMode={darkMode} />
                 </div>
-                {/* <div className="mt-8">
-                  <PersonelProjects
-                    repositories={repositories}
-                    isLoading={isReposLoading}
-                  />
-                </div> */}
               </section>
               <section id="contact">
                 <Contact darkMode={darkMode} />
@@ -316,20 +311,7 @@ function App() {
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              {/* <div className="flex items-center space-x-2">
-                <MapPin className={`h-4 w-4 ${darkMode ? 'text-slate-300' : 'text-slate-600'}`} />
-                <span className={darkMode ? 'text-slate-300' : 'text-slate-600'}>123 Anywhere St., Any City</span>
-              </div> */}
               <div className="flex items-center space-x-6">
-                {/* <a 
-                  href="https://leetcode.com/u/dqhuyy/" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className={`${darkMode ? 'text-amber-400 hover:text-amber-300' : 'text-amber-600 hover:text-amber-700'} transition-colors duration-300 flex items-center`}
-                >
-                  <Code2 className="h-4 w-4 mr-2" />
-                  <span>LeetCode</span>
-                </a> */}
                 <a
                   href="https://github.com/DanielNine9"
                   target="_blank"
