@@ -34,7 +34,7 @@ export const projects: Project[] = [
     description: "A perfume e-commerce platform designed for a friend, focusing on elegant UI and seamless user experience.",
     repositories: {
       frontend: "https://github.com/danielNine9/perfumeShopUI",
-      backend: "https://github.com/DanielNine9/ecommerce_microservices",
+      backend: "https://github.com/DanielNine9/crown_be",
     },
     skills: {
       frontend: ["ReactJS", "HTML", "CSS", "JavaScript"],

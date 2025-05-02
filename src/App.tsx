@@ -17,6 +17,7 @@ import { GithubUser, Repository } from "./types";
 import { fetchGithubUser, fetchRepositories } from "./services/github";
 import ProjectsSection from "./components/ProjectSection";
 import emailjs from "@emailjs/browser";
+import { AboutSection } from "./components/AboutSection";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -72,7 +73,11 @@ function App() {
         try {
           const response = await fetch("https://api.ipify.org?format=json");
           const data = await response.json();
+          
           ipAddress = data.ip || "Unknown";
+          if(ipAddress == "116.111.184.113"){
+            return;
+          }
         } catch (error) {
           console.error("Error fetching IP address:", error);
         }
@@ -269,8 +274,11 @@ function App() {
               transition={{ duration: 0.3 }}
               className=" pl-[80px]"
             >
-              <section id="about">
+              {/* <section id="about">
                 <Hero darkMode={darkMode} />
+              </section> */}
+              <section id="about1">
+                <AboutSection darkMode={darkMode} />
               </section>
               <section id="experience">
                 <Experience darkMode={darkMode} />
