@@ -63,7 +63,7 @@ export const Education: React.FC<EducationProps> = ({ darkMode }) => {
             className="mt-4"
           >
             <p className={darkMode ? "text-gray-300" : "text-gray-700"}>
-              GPA: 3.93 / 4.0
+              GPA: 3.96 / 4.0
             </p>
             <p className={darkMode ? "text-gray-400" : "text-gray-600"}>
               Dec 2022 - May 2025
