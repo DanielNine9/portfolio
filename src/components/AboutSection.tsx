@@ -129,7 +129,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ darkMode }) => {
                   Get in Touch
                 </motion.a>
 
-                <motion.div
+                {/* <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -143,7 +143,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ darkMode }) => {
                     <Download className="w-4 h-4 mr-2" />
                     Download CV
                   </a>
-                </motion.div>
+                </motion.div> */}
               </div>
             </motion.div>
 
