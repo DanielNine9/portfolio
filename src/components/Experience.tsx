@@ -48,8 +48,8 @@ export default function Experience({ darkMode }: any) {
         <motion.div
           whileHover={{ scale: 1.02 }}
           className={`p-8 rounded-2xl shadow-xl border ${darkMode
-              ? 'bg-slate-800/90 border-slate-700/50 text-blue-200'
-              : 'bg-white/90 border-blue-100 text-blue-800'
+            ? 'bg-slate-800/90 border-slate-700/50 text-blue-200'
+            : 'bg-white/90 border-blue-100 text-blue-800'
             } backdrop-blur-lg transition-all duration-300`}
         >
           <div className="flex items-center mb-8">
@@ -106,7 +106,7 @@ export default function Experience({ darkMode }: any) {
                 <Server className={`h-6 w-6 mr-3 mt-1 group-hover:text-yellow-400 ${darkMode ? 'text-blue-400' : 'text-blue-600'}`} />
               </motion.div>
               <span>
-                Designed and implemented RESTful APIs using <strong>Django Rest Framework</strong>, integrated with PostgreSQL and Redis, to power scalable backend services for data-driven applications. 🌐
+                Designed and implemented RESTful APIs using <strong>Spring Boot</strong>, integrated with PostgreSQL and Redis, to power scalable backend services for data-driven applications. 🌐
               </span>
             </motion.li>
             <motion.li variants={bulletVariants} className="flex items-start group">

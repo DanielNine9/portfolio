@@ -1,27 +1,44 @@
-if (-not $env:GITHUB_TOKEN) {
-    Write-Error "Lỗi: GITHUB_TOKEN không được thiết lập. Vui lòng cung cấp token trong biến môi trường."
+# git.ps1
+
+# Configure Git global user
+git config --global user.name "DanielNine9"
+git config --global user.email "dinhhuyfpt09@gmail.com"
+
+# Get repository and branch from environment variables or use defaults
+$repository = if ($env:GITHUB_REPOSITORY) { $env:GITHUB_REPOSITORY } else { "DanielNine9/portfolio" }
+$branch = if ($env:GITHUB_REF_NAME) { $env:GITHUB_REF_NAME } else { "master" }
+
+# Set remote URL with token
+$repoUrl = "git@github.com:DanielNine9/portfolio.git"
+git remote set-url origin $repoUrl
+
+# Ensure on the correct branch
+Write-Output "Switching to branch '$branch'..."
+git fetch origin
+git checkout $branch
+if ($LASTEXITCODE -ne 0) {
+    Write-Error "Error: Could not switch to branch '$branch'"
     exit 1
 }
 
-git config user.name "github-actions[bot]"
-git config user.email "github-actions[bot]@users.noreply.github.com"
+# Add all changes
+Write-Output "Staging changes..."
+git add -A
 
-$repoUrl = "https://x-access-token:$env:GITHUB_TOKEN@github.com/DanielNine9/portfolio.git"
-git remote set-url origin $repoUrl
-
-$branchExists = git rev-parse --verify gh-pages
-if (-not $branchExists) {
-    Write-Output "Branch gh-pages không tồn tại. Tạo branch mới..."
-    git checkout --orphan gh-pages
-    git commit --allow-empty -m "Initial gh-pages commit"
+# Commit changes
+$commitMessage = "Auto-commit from PowerShell script at $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
+Write-Output "Committing changes..."
+git commit -m "$commitMessage"
+if ($LASTEXITCODE -ne 0) {
+    Write-Warning "No changes to commit."
 }
 
-Write-Output "Đang push lên gh-pages..."
-git push origin gh-pages
-
+# Push to remote
+Write-Output "Pushing to '$branch'..."
+git push origin $branch
 if ($LASTEXITCODE -eq 0) {
-    Write-Output "Push thành công!"
+    Write-Output "Push successful!"
 } else {
-    Write-Error "Lỗi: Push thất bại với mã lỗi $LASTEXITCODE"
+    Write-Error "Error: Push failed with exit code $LASTEXITCODE"
     exit 1
 }
