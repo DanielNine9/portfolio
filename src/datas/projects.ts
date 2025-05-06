@@ -28,7 +28,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "crown",
-    images: ["/img/crown_1.png", "/img/crown_2.png"],
+    images: ["/portfolio/img/crown_1.png", "/portfolio/img/crown_2.png"],
     title: "Crown",
     team_size: 1,
     description: "A perfume e-commerce platform designed for a friend, focusing on elegant UI and seamless user experience.",
@@ -54,7 +54,7 @@ export const projects: Project[] = [
   },
   {
     id: "book-heaven",
-    images: ["/img/book_heaven_1.png", "/img/book_heaven_2.png"],
+    images: ["/portfolio/img/book_heaven_1.png", "/portfolio/img/book_heaven_2.png"],
     title: "Book Heaven",
     team_size: 1,
     description: "A web application for browsing and purchasing books online, featuring a user-friendly interface and robust backend.",
@@ -80,7 +80,7 @@ export const projects: Project[] = [
   },
   {
     id: "car-manager",
-    images: ["/img/cars_1.png"],
+    images: ["/portfolio/img/cars_1.png"],
     title: "Car Manager",
     team_size: 1,
     description: "A web application for managing car information, including details, pricing, and availability.",
@@ -106,7 +106,7 @@ export const projects: Project[] = [
   },
   {
     id: "talent-hub",
-    images: ["/img/talent_hub_1.png"],
+    images: ["/portfolio/img/talent_hub_1.png"],
     title: "Talent Hub",
     team_size: 5,
     description: "A dynamic job search platform designed to connect clients with freelancers, offering seamless job posting, talent discovery, and project management features.",
@@ -132,7 +132,7 @@ export const projects: Project[] = [
   },
   {
     id: "helpdesk-ai",
-    images: ["/img/helpdesk_1.png"],
+    images: ["/portfolio/img/helpdesk_1.png"],
     title: "Helpdesk AI",
     team_size: 5,
     description: "An AI-powered helpdesk platform designed to answer user queries, provide clear explanations, and enhance customer support experiences.",

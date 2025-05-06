@@ -7,9 +7,9 @@ interface AboutSectionProps {
 }
 
 const profileImages = [
-  { url: "/img/me3.png", alt: "Profile picture 1" },
-  { url: "/img/me2.png", alt: "Profile picture 2" },
-  { url: "/img/me1.png", alt: "Profile picture 3" }
+  { url: "/portfolio/img/me3.png", alt: "Profile picture 1" },
+  { url: "/portfolio/img/me2.png", alt: "Profile picture 2" },
+  { url: "/portfolio/img/me1.png", alt: "Profile picture 3" }
 ];
 
 interface Feature {

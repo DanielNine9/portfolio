@@ -184,7 +184,7 @@ const Contact = ({ darkMode }: ContactProps) => {
                             }`}>My Location</h3>
                             <div className="w-full h-96 rounded-xl overflow-hidden relative">
                                 <img
-                                    src="/img/location.png"
+                                    src="/portfolio/img/location.png"
                                     alt="Location map"
                                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                                 />

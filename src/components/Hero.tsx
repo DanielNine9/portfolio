@@ -59,7 +59,7 @@ export const Hero: React.FC<HeroProps> = ({ darkMode }) => {
           className="mb-6"
         >
           <img
-            src="/img/avatar.png" // Thay bằng URL ảnh cá nhân
+            src="/portfolio/img/avatar.png" // Thay bằng URL ảnh cá nhân
             alt="Dinh Quoc Huy"
             className="w-24 h-24 rounded-full mx-auto border-4 border-opacity-50 object-cover"
             style={{ borderColor: darkMode ? '#ffffff33' : '#00000020' }}
