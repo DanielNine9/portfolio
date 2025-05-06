@@ -11,38 +11,37 @@ const projects = [
     title: 'Pawnshop Project',
     description: 'An internal web app for managing pawnshop operations, including transactions, customers, loans, and payments.',
     responsibilities: [
-      'Developed reusable Angular components for transaction management, customer dashboards, and loan tracking, improving code maintainability.',
-      'Built RESTful APIs with Django Rest Framework to handle loan processing, payment schedules, and customer data management.',
+      'Developed reusable React components for transaction management, customer dashboards, and loan tracking, improving code maintainability.',
+      'Built RESTful APIs using Spring Boot to handle loan processing, payment schedules, and customer data management.',
       'Optimized PostgreSQL queries by implementing indexes and query caching, reducing transaction query times by 30%.',
-      'Integrated JWT-based role-based authentication to secure API endpoints and ensure user access control.',
-      'Wrote unit tests for backend APIs using Pytest, achieving 85% code coverage.',
+      'Integrated JWT-based role-based authentication in Spring Security to secure API endpoints and ensure user access control.',
       'Collaborated with UI/UX designers to ensure responsive and accessible frontend interfaces.'
     ],
     link: 'https://nguoibanvang.vn/',
   },
   {
     title: 'Wastelinq',
-    description: 'A web platform that automates waste management tasks such as tracking, e-manifests, scheduling, and reporting.',
+    description: 'A web platform that automates waste management tasks, including waste tracking, e-manifests, scheduling, and reporting.',
     responsibilities: [
-      'Created responsive React components with Material UI for waste tracking dashboards and e-manifest forms, enhancing user experience.',
-      'Developed and optimized REST APIs using Django Rest Framework to manage waste scheduling and reporting functionalities.',
-      'Improved PostgreSQL performance by resolving N+1 query issues and implementing batch processing, reducing API response times by 20%.',
-      'Debugged and fixed critical frontend bugs related to state management with Redux, improving system stability.',
-      'Integrated third-party APIs for real-time waste tracking data, ensuring seamless data flow.',
-      'Wrote integration tests for APIs using Postman and Pytest to validate end-to-end functionality.'
+      'Designed and developed responsive React components using Material UI Table for waste tracking dashboards and e-manifest forms, improving user interaction and data visualization.',
+      'Utilized React Query for efficient data fetching and caching, and implemented useState and useEffect for robust state management in the frontend.',
+      'Applied debounce and throttling techniques to optimize user input handling and event-driven interactions, reducing unnecessary API calls by 25%.',
+      'Built and maintained RESTful APIs using Spring Boot to support persistent storage and dynamic updates for waste scheduling and reporting data.',
+      'Optimized PostgreSQL database performance by resolving N+1 query issues using Spring Data JPA’s `@EntityGraph` and join fetching, cutting API response times by 20%.',
+      'Collaborated with cross-functional teams to debug and resolve critical bugs, enhance code quality, and ensure a seamless user experience.'
     ],
     link: 'https://www.wastelinq.com/',
   },
   {
     title: 'Cleanlinq',
-    description: 'Revamps the tanker and material management software, enhancing UI/UX, integrating with Acumatica.',
+    description: 'A web platform for tanker and material management, featuring enhanced UI/UX and integration with Acumatica for streamlined operations.',
     responsibilities: [
-      'Built reusable React components with Material UI for tanker management, material tracking, and reporting dashboards, reducing development time by 15%.',
-      'Developed robust REST APIs with Django Rest Framework to integrate with Acumatica for real-time data synchronization.',
-      'Optimized PostgreSQL database performance using advanced indexing and stored procedures, cutting API response times by 25%.',
-      'Ensured cross-platform compatibility for web and iOS interfaces by implementing responsive design and testing on multiple devices.',
-      'Integrated analytics tracking with Google Analytics to monitor user interactions and improve UX.',
-      'Collaborated with QA team to automate UI testing using Cypress, ensuring consistent performance across browsers.'
+      'Developed reusable React components with Material UI Table for tanker management, material tracking, and reporting dashboards, reducing frontend development time by 15%.',
+      'Leveraged React Hooks (useState, useEffect) for efficient state management and React Query for optimized data fetching and caching in the frontend.',
+      'Built robust RESTful APIs using Spring Boot to enable seamless data retrieval and integration with Acumatica for real-time data synchronization.',
+      'Optimized PostgreSQL database queries by addressing N+1 issues using Spring Data JPA’s join fetching and entity graphs, improving API response times by 25%.',
+      'Collaborated with cross-functional teams to identify and fix bugs, enhance code quality, and deliver a reliable and responsive user experience.',
+      'Implemented automated UI testing with Cypress to ensure consistent performance and cross-browser compatibility.'
     ],
     link: 'https://ats.efourholdings.com/',
   },
@@ -54,10 +53,9 @@ const projects = [
       'Built scalable backend services with Spring Boot, implementing REST APIs for job matching, user authentication, and profile management.',
       'Integrated WebSocket using Spring WebSocket for real-time notifications and in-app chat, improving user engagement.',
       'Utilized Cloudinary for efficient storage, optimization, and delivery of user-uploaded media, reducing image load times by 40%.',
-      'Implemented Elasticsearch for fast and accurate job search functionality, supporting complex queries.',
-      'Wrote integration tests with JUnit and Jest to ensure system reliability and API performance.'
+      'Wrote integration tests with JUnit to ensure system reliability and API performance.'
     ],
-    link: '#',
+    link: 'https://talenthub.io.vn/',
   },
 ];
 
@@ -92,7 +90,7 @@ export const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-2"
+        className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2"
       >
         {projects.map((project, index) => (
           <motion.div
