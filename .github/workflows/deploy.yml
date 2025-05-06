@@ -8,8 +8,7 @@ on:
 jobs:
   deploy-react-to-gh-pages:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+ 
     # env:
     #   EXAMPLE: example # environment variable
 
