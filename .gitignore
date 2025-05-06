@@ -23,7 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 
-./git.ps1
+git.ps1
 .env
 
 
