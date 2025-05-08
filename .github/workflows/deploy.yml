@@ -8,7 +8,6 @@ on:
 jobs:
   deploy-react-to-gh-pages:
     runs-on: ubuntu-latest
-
     steps:
       # Checkout the repository content to GitHub runner
       - name: Checkout
@@ -56,7 +55,9 @@ jobs:
 
       # Deploy the React app to GitHub Pages
       - name: Deploy
+        env:
+            VITE_GITHUB_TOKEN: ${{ secrets.VITE_GITHUB_TOKEN }}
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }} # GitHub-provided token for deployment
+          github_token: ${{ secrets.VITE_GITHUB_TOKEN }} # GitHub-provided token for deployment
           publish_dir: ./dist # Directory to deploy
