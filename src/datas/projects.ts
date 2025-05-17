@@ -111,8 +111,8 @@ export const projects: Project[] = [
     team_size: 5,
     description: "A dynamic job search platform designed to connect clients with freelancers, offering seamless job posting, talent discovery, and project management features.",
     repositories: {
-      frontend: "https://github.com/DanielNine9/talenthub_fe",
-      backend: "https://github.com/DanielNine9/talenthub_be",
+      frontend: "https://github.com/tiendinh203/talenthub-UI",
+      backend: "https://github.com/thanhtung795/FreelancerHub",
     },
     skills: {
       frontend: ["ReactJS", "HTML", "CSS", "JavaScript", "TypeScript"],
